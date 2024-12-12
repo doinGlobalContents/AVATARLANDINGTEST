@@ -32,6 +32,18 @@
             gap: 20px;
             padding: 50px;
         }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        h2 {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 0 0 20px 0;
+            color: #ccc;
+        }
         .avatar-container {
             width: 600px;
             height: 600px;
@@ -73,6 +85,13 @@
         .button-container button:hover {
             background-color: #373835;
         }
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #bbb;
+            margin-top: 20px;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -81,10 +100,13 @@
         <img src="AI-Academy-Logo.png" alt="AI Academy Logo">
     </header>
     <main>
+        <h1>Professional Certificate: Gestión de Proyectos con IA</h1>
+        <h2>A continuación podrá interactuar con un asistente virtual orientado a responder sus consultas acerca del cursado del programa. ¡Adelante!</h2>
+        
         <div class="button-container">
             <button onclick="showAvatar('avatar1')">Coordinación Cursado</button>
             <button onclick="showAvatar('avatar2')">Soporte TIF</button>
-                    </div>
+        </div>
 
         <div class="avatar-container active" id="avatar1">
             <h2 style="color:rgb(255, 255, 255);">Coordinación Cursado</h2>
@@ -98,47 +120,19 @@
                     const container=document.createElement("div");
                     container.id="heygen-streaming-container";
                     const stylesheet=document.createElement("style");
-                    stylesheet.innerHTML=`
-                        #heygen-streaming-embed {
-                            z-index: 9999;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 0;
-                            border: none;
-                            box-shadow: none;
-                            transition: none;
-                            overflow: hidden;
-                        }
-                        #heygen-streaming-container {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        #heygen-streaming-container iframe {
-                            width: 100%;
-                            height: 100%;
-                            border: none;
-                        }
-                    `;
+                    stylesheet.innerHTML=`/* CSS específico para avatar1 */`;
                     const iframe=document.createElement("iframe");
                     iframe.allowFullscreen=!1;
                     iframe.title="Streaming Embed";
                     iframe.role="dialog";
                     iframe.allow="microphone";
                     iframe.src=url;
-                    let visible=!1,initial=!1;
-                    window.addEventListener("message",(e=>{
-                        e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
-                            "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
-                            "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
-                            "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
-                        )
-                    }));
                     container.appendChild(iframe);
                     wrapDiv.appendChild(stylesheet);
                     wrapDiv.appendChild(container);
                     document.getElementById("avatar1").appendChild(wrapDiv);
                 }(globalThis);
-                </script>
+            </script>
         </div>
 
         <div class="avatar-container" id="avatar2">
@@ -153,51 +147,25 @@
                     const container=document.createElement("div");
                     container.id="heygen-streaming-container";
                     const stylesheet=document.createElement("style");
-                    stylesheet.innerHTML=`
-                        #heygen-streaming-embed {
-                            z-index: 1;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 0;
-                            border: none;
-                            box-shadow: none;
-                            transition: none;
-                            overflow: hidden;
-                        }
-                        #heygen-streaming-container {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        #heygen-streaming-container iframe {
-                            width: 100%;
-                            height: 100%;
-                            border: none;
-                        }
-                    `;
+                    stylesheet.innerHTML=`/* CSS específico para avatar2 */`;
                     const iframe=document.createElement("iframe");
                     iframe.allowFullscreen=!1;
                     iframe.title="Streaming Embed";
                     iframe.role="dialog";
                     iframe.allow="microphone";
                     iframe.src=url;
-                    let visible=!1,initial=!1;
-                    window.addEventListener("message",(e=>{
-                        e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
-                            "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
-                            "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
-                            "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
-                        )
-                    }));
                     container.appendChild(iframe);
                     wrapDiv.appendChild(stylesheet);
                     wrapDiv.appendChild(container);
                     document.getElementById("avatar2").appendChild(wrapDiv);
                 }(globalThis);
-                </script>
+            </script>
         </div>
-
-        
     </main>
+    <footer>
+        Este asistente virtual es un prototipo desarrollado en el laboratorio de investigación de AI Academy by doinGlobal.
+    </footer>
+
     <script>
         function showAvatar(avatarId) {
             // Hide all avatar containers
