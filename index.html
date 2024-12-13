@@ -25,9 +25,19 @@ header {
     height: 100px; 
 }
 
-header img {
+header .logonegro {
     max-height: 70px;
+    visibility: visible;
 }
+
+header .logoblanco {
+    max-height: 70px;
+    visibility: hidden;
+}
+
+/*header img {
+    max-height: 70px;
+}*/
 
 main {
     display: flex;
@@ -118,12 +128,22 @@ footer {
         flex-direction: column;
         height: auto; /* Ajusta automáticamente la altura */
         padding: 15px;
-        margin: 0px !important;
+        background: none;
     }
 
-    header img {
-        max-height: 50px; /* Redimensiona el logo */
+    header .logonegro {
+    max-height: 50px;
+    visibility: visible;
     }
+
+    header .logoblanco {
+    max-height: 50px;
+    visibility: hidden;
+    }
+
+    /*header img {
+        max-height: 50px; /* Redimensiona el logo
+    }*/
 
     main {
         padding: 20px;
@@ -165,6 +185,7 @@ footer {
 <body>
     <header>
         <img src="AI-Academy-Logo.png" alt="AI Academy Logo">
+        <img src="AI-Academy-Logo-white.png" alt="AI Academy Logo">
     </header>
     <main>
         <h1>Professional Certificate: Gestión de Proyectos con IA</h1>
