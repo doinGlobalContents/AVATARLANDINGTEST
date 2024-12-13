@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Academic Support</title>
-    <style>
+   <style>
 body {
     font-family: POPPINS, sans-serif;
     color: #262626;
@@ -13,93 +13,152 @@ body {
     background: url('AI-Academy-MGPPIA.png') no-repeat center center fixed;
     background-size: cover;
 }
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            padding: 7px;
-            background-color: #f5f5f5;
-            border-bottom: 1px solid #ddd;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-            height: 100px; 
-        }
-        header img {
-            max-height: 70px;
-        }
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 50px;
-        }
 
-           h1 {
-            font-size: 2em;
-            text-align: center;
-            margin: 0 0 10px 0;
-            color: #fff;
-        }
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 7px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100px; 
+}
 
-            h2 {
-            font-size: 1.2em;
-            text-align: center;
-            margin: 0 0 20px 0;
-            color: #ccc;
-        }
-        .avatar-container {
-            width: 600px;
-            height: 600px;
-            background-color: #262626;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-radius: 20px;
-        }
-        .avatar-container.active {
-            display: flex;
-        }
-        .avatar-container h2 {
-            margin: 0;
-            padding: 10px;
-            font-size: 1.5em;
-            border-radius: 10px;
-        }
-        .button-container {
-            display: flex;
-            gap: 10px;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            font-family: poppins, sans-serif;
-            font-style: bold;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            background-color: #99cc06;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
+header img {
+    max-height: 70px;
+}
 
-        .button-container button:hover,
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: #ccc;
+}
+
+.avatar-container {
+    width: 600px;
+    height: 600px;
+    background-color: #262626;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.avatar-container.active {
+    display: flex;
+}
+
+.avatar-container h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-family: poppins, sans-serif;
+    font-style: bold;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #99cc06;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container button:hover,
 .button-container button:focus {
     background-color: #373835;
 }
 
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #f7f0f0;
+    margin-top: 20px;
+    padding: 10px;
+}
 
-        footer {
-            text-align: center;
-            font-size: 0.8em;
-            color: #f7f0f0;
-            margin-top: 20px;
-            padding: 10px;
-        }
-    </style>
+/* Estilos para pantallas menores a 600px */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        background-size: contain; /* Asegura que la imagen no se distorsione */
+    }
+
+    header {
+        flex-direction: column;
+        height: auto; /* Ajusta automáticamente la altura */
+        padding: 15px;
+    }
+
+    header img {
+        max-height: 50px; /* Redimensiona el logo */
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Reduce el tamaño del texto */
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .avatar-container {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
+        border-radius: 10px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Apila los botones verticalmente */
+        gap: 5px; /* Reduce el espacio entre botones */
+    }
+
+    .button-container button {
+        width: 100%; /* Botones toman todo el ancho */
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.7em; /* Reduce el tamaño de fuente del footer */
+        padding: 5px;
+    }
+}
+</style>
+
 </head>
 
 <body>
